@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Waxios() {
+        var http = new XMLHttpRequest();
+        http.open('get','http://localhost:2222/login/get');
+        http.onreadystatechange = function (response) {
+            var a = response.target;
+            if (a.readyState===4&&a.status===200) {
+                console.log(JSON.parse(a.responseText))
+            }
+        }
+        http.send();
+    }
+    Waxios()
+</script>
+</html>
